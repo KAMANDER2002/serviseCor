@@ -15,7 +15,7 @@ namespace AspConsole.Models
         }
         public int WorkersCount => configuration.GetValue<int>("WorkersCount");
         public int RunInterval => configuration.GetValue<int>("RunInterval");
-        public int InstanceName => configuration.GetValue<int>("name");
-        public int ResultPath => configuration.GetValue<int>("ResultPath");
+        public string InstanceName => configuration.GetValue<string>("name");
+        public string ResultPath => configuration.GetValue<string>("ResultPath");
     }
 }

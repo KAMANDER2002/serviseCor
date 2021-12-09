@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using AspConsole.Models;
+using AspConsole.WorkerTask;
 
 namespace AspConsole.Servises
 {
@@ -17,6 +18,7 @@ namespace AspConsole.Servises
         private readonly IServiceProvider service;
         private readonly Settings settings;
         private readonly ILogger logger;
+        private Random random = new Random();
         private readonly object syncRoot = new object();
         public TaskSchedulerSevice(IServiceProvider service)
         {
@@ -42,9 +44,17 @@ namespace AspConsole.Servises
             if (Monitor.TryEnter(syncRoot))
             {
                 logger.LogInformation("процесс начался");
+                DoWork();
                 logger.LogInformation("процесс завершился");
                 Monitor.Exit(syncRoot);
             }else logger.LogInformation("процесс в стадии выполнения....");
+        }
+        private void DoWork()
+        {
+            var number = random.Next(20);
+            var processor = service.GetRequiredService<TaskProcessor>();
+            var queue = service.GetRequiredService<Servises.TaskQueue.IBackGroundTaskQueue>();
+            queue.QueueBackGroundWorkItem(token => { return processor.RunAsunk(number, token); });
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

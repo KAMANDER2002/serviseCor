@@ -25,7 +25,10 @@ namespace AspConsole
             .ConfigureServices((servises)=> 
             {
                 servises.AddHostedService<TaskSchedulerSevice>();
+                servises.AddHostedService<WorkerServeces>();
                 servises.AddSingleton<Models.Settings>();
+                servises.AddSingleton<WorkerTask.TaskProcessor>();
+                servises.AddSingleton<Servises.TaskQueue.IBackGroundTaskQueue, Servises.TaskQueue.BackgroundTaskQueu>();
             });
 
             await builder.RunConsoleAsync();

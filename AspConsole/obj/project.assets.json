@@ -1533,11 +1533,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\borze\\Desktop\\AspNetTrenirovkaSite\\AspConsole\\AspConsole.csproj",
+      "projectUniqueName": "C:\\Users\\borze\\Desktop\\Sevice\\AspConsole\\AspConsole.csproj",
       "projectName": "AspConsole",
-      "projectPath": "C:\\Users\\borze\\Desktop\\AspNetTrenirovkaSite\\AspConsole\\AspConsole.csproj",
+      "projectPath": "C:\\Users\\borze\\Desktop\\Sevice\\AspConsole\\AspConsole.csproj",
       "packagesPath": "C:\\Users\\borze\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\borze\\Desktop\\AspNetTrenirovkaSite\\AspConsole\\obj\\",
+      "outputPath": "C:\\Users\\borze\\Desktop\\Sevice\\AspConsole\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
